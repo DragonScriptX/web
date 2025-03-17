@@ -121,6 +121,7 @@ function loadImages(elementId, images) {
         img.src = imgSrc;
         img.alt = "Obrázek";
         img.classList.add("clickable-image");
+        img.style.cursor = "pointer";
         gallery.appendChild(img);
     });
 
@@ -129,22 +130,41 @@ function loadImages(elementId, images) {
 
 // Funkce pro zvětšení fotek
 function setupImageModal() {
-    if (document.querySelector(".modal")) return; // Zamezení duplikace modálního okna
+    let modal = document.getElementById("image-modal");
 
-    const modal = document.createElement("div");
-    modal.classList.add("modal");
-    document.body.appendChild(modal);
-
-    const img = document.createElement("img");
-    modal.appendChild(img);
-
-    modal.addEventListener("click", () => {
+    if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "image-modal";
+        modal.classList.add("modal");
         modal.style.display = "none";
-    });
+        modal.style.position = "fixed";
+        modal.style.top = "0";
+        modal.style.left = "0";
+        modal.style.width = "100%";
+        modal.style.height = "100%";
+        modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+        modal.style.justifyContent = "center";
+        modal.style.alignItems = "center";
+        modal.style.zIndex = "1000";
+
+        const img = document.createElement("img");
+        img.style.maxWidth = "80%";
+        img.style.maxHeight = "80%";
+        img.style.borderRadius = "10px";
+        img.style.boxShadow = "0px 5px 15px rgba(0, 0, 0, 0.3)";
+        modal.appendChild(img);
+
+        document.body.appendChild(modal);
+
+        modal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
 
     document.querySelectorAll(".clickable-image").forEach(image => {
         image.addEventListener("click", () => {
-            img.src = image.src;
+            const modalImg = modal.querySelector("img");
+            modalImg.src = image.src;
             modal.style.display = "flex";
         });
     });
