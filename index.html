@@ -7,39 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="page-title"></h1>
-        <p id="invitation-text"></p>
-
-        <!-- Přepínač jazyků -->
-        <button class="lang-switch" onclick="switchLanguage()">🇬🇧 / 🇨🇿</button>
-
-        <!-- Sekce Poběžovický zámecký park -->
-        <div class="details">
-            <h2 id="pobezovice-title"></h2>
-            <p id="pobezovice-address"></p>
-
-            <div class="location-container">
-                <div class="map-container">
-                    <iframe id="pobezovice-map" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div id="pobezovice-gallery" class="photo-gallery"></div>
-            </div>
-        </div>
-
-        <!-- Sekce Chodská Chalupa -->
-        <div class="details">
-            <h2 id="chalupa-title"></h2>
-            <p id="chalupa-address"></p>
-
-            <div class="location-container">
-                <div class="map-container">
-                    <iframe id="chalupa-map" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div id="chalupa-gallery" class="photo-gallery"></div>
-            </div>
-        </div>
-    </div>
+    <div id="header"></div>  <!-- Načítá `header.html` -->
+    <div id="countdown"></div>  <!-- Načítá `countdown.html` -->
+    <div id="pobezovice"></div>  <!-- Načítá `pobezovice.html` -->
+    <div id="chalupa"></div>  <!-- Načítá `chalupa.html` -->
+    <div id="footer"></div>  <!-- Načítá `footer.html` -->
 
     <script src="script.js" defer></script>
 </body>
