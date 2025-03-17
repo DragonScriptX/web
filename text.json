@@ -2,25 +2,36 @@
     "cs": {
         "title": "Daniel & Sechelela",
         "invitation": "Srdečně vás zveme na naši svatbu!",
+
         "countdown_days": "Dní",
         "countdown_hours": "Hodin",
         "countdown_minutes": "Minut",
         "countdown_seconds": "Sekund",
-        "pobezovice_title": "Poběžovický zámecký park",
+
+        "pobezovice_title": "Obřad – Poběžovický zámecký park",
         "pobezovice_address": "Nádražní 310, 345 22 Poběžovice",
-        "chalupa_title": "Chodská Chalupa",
-        "chalupa_address": "Újezd 107, 344 01 Újezd"
+        "pobezovice_description": "Milí svatebčané, náš svatební den se bude odehrávat na kouzelném místě plném historie a krásné přírody – Poběžovickém zámeckém parku. Toto místo je jako stvořené pro romantické chvíle, a právě tady si řekneme své 'ANO'. Poběžovice jsou malebné městečko v podhůří Českého lesa s bohatou historií sahající až do 14. století. Zámecký park, kde se bude konat obřad, byl vytvořen v 19. století a nabízí nádhernou scenérii plnou zeleně, historických prvků a klidné atmosféry. Představte si, jak budete stát pod širým nebem, obklopeni šumícími stromy a nádherným výhledem na zámecké zdi. Lepší místo pro začátek společné cesty si ani neumíme představit.",
+
+        "chalupa_title": "Hostina – Chodská Chalupa",
+        "chalupa_address": "Újezd 107, 344 01 Újezd",
+        "chalupa_description": "Po krásném obřadu vás srdečně zveme k oslavě naší svatby do Chodské Chalupy, která se nachází nedaleko Poběžovic, v malebné vesnici Újezd. Co vás čeká? Tradiční chodská kuchyně s domácími specialitami, útulné prostředí stylové chalupy, krásná venkovní terasa s výhledem na okolní přírodu a pohodlné ubytování v dřevěných chatkách. Věřte nám, že si tu vychutnáte nejen skvělé jídlo, ale i pohodovou atmosféru, kterou vytvoříme společně s vámi. Celý večer bude patřit dobré náladě, tanci a smíchu až do ranních hodin. Děkujeme, že s námi budete sdílet tento nezapomenutelný den. Moc se na vás těšíme!"
     },
+
     "en": {
         "title": "Daniel & Sechelela",
         "invitation": "We warmly invite you to our wedding!",
+
         "countdown_days": "Days",
         "countdown_hours": "Hours",
         "countdown_minutes": "Minutes",
         "countdown_seconds": "Seconds",
-        "pobezovice_title": "Poběžovice Castle Park",
+
+        "pobezovice_title": "Ceremony – Poběžovice Castle Park",
         "pobezovice_address": "Nádražní 310, 345 22 Poběžovice",
-        "chalupa_title": "Chodská Chalupa",
-        "chalupa_address": "Újezd 107, 344 01 Újezd"
+        "pobezovice_description": "Dear guests, our wedding day will take place in a magical location full of history and beautiful nature – Poběžovice Castle Park. This place is made for romantic moments, and it is here that we will say our 'I DO'. Poběžovice is a picturesque town in the foothills of the Bohemian Forest, rich in history dating back to the 14th century. The castle park, where the ceremony will take place, was created in the 19th century and offers a stunning green landscape, historical charm, and a peaceful atmosphere. Imagine standing under the open sky, surrounded by rustling trees and breathtaking views of the castle walls. We couldn't imagine a better place to begin our journey together.",
+
+        "chalupa_title": "Reception – Chodská Chalupa",
+        "chalupa_address": "Újezd 107, 344 01 Újezd",
+        "chalupa_description": "After the beautiful ceremony, we warmly invite you to celebrate our wedding at Chodská Chalupa, located near Poběžovice in the charming village of Újezd. What awaits you? Traditional Chod cuisine with homemade specialties, a cozy rustic atmosphere, a beautiful outdoor terrace with scenic views, and comfortable accommodation in wooden cottages. Trust us, you will enjoy not only great food but also a relaxed atmosphere that we will create together. The entire evening will be filled with joy, laughter, and dancing until the early morning hours. Thank you for sharing this unforgettable day with us. We are so excited to celebrate with you!"
     }
 }
