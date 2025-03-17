@@ -1,65 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
-/* 🌸 Celkový vzhled stránky – Jemný papírový styl */
+/* 🌸 Celkový styl stránky */
 body {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    background-color: #FAF3E0; /* Krémové pozadí */
-    color: #5A3E36; /* Tmavě hnědá – elegantní text */
+    background-color: #FAF3E0; /* Jemné krémové pozadí */
+    color: #5A3E36; /* Tmavě hnědá pro text */
     margin: 0;
     padding: 0;
-    background-image: url('paper_texture.jpg'); /* Jemná textura papíru */
+    background-image: url('paper_texture.jpg'); /* Jemná textura */
     background-size: cover;
     background-attachment: fixed;
 }
 
-/* 📜 Hlavní karta (pozvánka) */
+/* 📜 Hlavní kontejner */
 .main-container {
     max-width: 900px;
     margin: 50px auto;
     padding: 40px;
-    background: rgba(255, 250, 240, 0.98); /* Jemná krémová poloprůhlednost */
+    background: rgba(255, 250, 240, 0.98);
     border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
-    border: 5px solid #C08F70; /* Zlaté lemování */
-    position: relative;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* 🌿 Zlatý dekor kolem stránky */
-.main-container::before {
-    content: "";
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    right: -15px;
-    bottom: -15px;
-    border: 8px solid gold;
-    border-radius: 20px;
-    z-index: -1;
-}
-
-/* 🌸 Květinová dekorace */
-.floral-decor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('floral_gold.png'); /* Květinový motiv */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.8;
-    pointer-events: none;
-    z-index: -2;
-}
-
-/* ✨ Hlavní nadpis – elegantní písmo */
+/* ✨ Hlavní nadpis */
 .header h1 {
     font-size: 5em;
     font-family: 'Great Vibes', cursive;
-    color: #C08F70; /* Zlatá */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    color: #C08F70;
     margin-bottom: 10px;
 }
 
@@ -97,7 +65,6 @@ body {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5em;
     color: gold;
-    font-weight: bold;
 }
 
 .countdown div {
@@ -107,89 +74,87 @@ body {
     background: rgba(255, 245, 230, 0.7);
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid gold;
 }
 
-.countdown span {
-    display: block;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #5A3E36;
-}
-
-/* 📍 Sekce místa */
+/* 📍 Sekce místa (rozložení mapa + fotky) */
 .location-container {
-    margin: 40px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     padding: 30px;
-    background: rgba(255, 250, 240, 0.95);
-    border-radius: 15px;
-    border: 2px solid gold;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 🗺️ Mapy */
+/* 🗺️ Mapa */
 .map-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px 0;
-    border-radius: 15px;
+    flex: 1;
+    max-width: 350px;
+    height: 250px;
+    border-radius: 10px;
     overflow: hidden;
-    border: 3px solid gold;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .map-container iframe {
     width: 100%;
-    height: 350px;
+    height: 100%;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 /* 📷 Fotogalerie */
 .photo-gallery {
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
 }
 
 .photo-gallery img {
-    width: 220px;
-    height: 150px;
+    width: 100px;
+    height: 80px;
     object-fit: cover;
-    border-radius: 10px;
-    border: 3px solid gold;
+    border-radius: 8px;
     transition: transform 0.3s ease-in-out;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .photo-gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+/* 🖼️ Modální okno pro zvětšené fotky */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
 }
 
 /* 📱 Responsivní úpravy */
 @media screen and (max-width: 768px) {
-    .countdown {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .map-container {
-        height: 300px;
-    }
-    .photo-gallery {
+    .location-container {
         flex-direction: column;
         align-items: center;
     }
-}
-
-/* 📜 Spodní část webu */
-.footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2em;
-    color: #5A3E36;
-    background-color: rgba(255, 250, 240, 0.95);
-    border-top: 2px solid gold;
-    margin-top: 50px;
+    .map-container {
+        width: 100%;
+    }
+    .photo-gallery {
+        justify-content: center;
+    }
 }
