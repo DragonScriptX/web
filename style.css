@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
-/* 🎨 CELÝ WEB – jednotné a moderní zobrazení */
+/* Celý web */
 body {
     font-family: 'Playfair Display', serif;
     text-align: center;
@@ -13,37 +13,64 @@ body {
     background-attachment: fixed;
 }
 
-/* 🎨 HLAVNÍ OBSAH – sjednocený design */
+/* Kontejner hlavního obsahu */
 .main-container {
     max-width: 900px;
     margin: auto;
     padding: 40px 20px;
-    background: rgba(255, 250, 240, 0.95); /* Jemná průhlednost */
+    background: rgba(255, 250, 240, 0.95);
     border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border: 5px solid #c08f70;
     position: relative;
 }
 
-/* ✅ 1. Header – Název svatby */
-.header {
-    text-align: center;
-    padding: 40px 0;
+/* Zlatý rám */
+.main-container::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 8px solid gold;
+    border-radius: 20px;
+    z-index: -1;
 }
 
+/* Květinová dekorace */
+.floral-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('floral_gold.png'); /* Květinový motiv */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Hlavní nadpis */
 .header h1 {
     font-size: 5em;
     font-family: 'Great Vibes', cursive;
-    color: #c08f70;
+    color: gold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
 }
 
+/* Podnadpis */
 .header p {
     font-size: 1.8em;
     font-family: 'Dancing Script', cursive;
     color: #5a3e36;
 }
 
-/* ✅ 2. Tlačítko pro přepínání jazyků */
+/* Tlačítko pro přepínání jazyků */
 .lang-switch {
     margin-top: 10px;
     background: linear-gradient(to right, #c08f70, #a45d4a);
@@ -61,7 +88,7 @@ body {
     background: linear-gradient(to right, #a45d4a, #c08f70);
 }
 
-/* ✅ 3. Odpočítávání – krásně integrované */
+/* Odpočítávání */
 .countdown {
     display: flex;
     justify-content: center;
@@ -69,7 +96,7 @@ body {
     margin: 30px 0;
     font-family: 'Dancing Script', cursive;
     font-size: 2.5em;
-    color: #a45d4a;
+    color: gold;
     font-weight: bold;
 }
 
@@ -77,6 +104,10 @@ body {
     min-width: 100px;
     text-align: center;
     font-size: 2em;
+    background: rgba(255, 245, 230, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid gold;
 }
 
 .countdown span {
@@ -86,21 +117,27 @@ body {
     color: #5a3e36;
 }
 
-/* ✅ 4. Sekce míst – Poběžovický zámecký park a Chodská Chalupa */
+/* Sekce místa */
 .location-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 40px 0;
+    padding: 30px;
+    background: rgba(255, 250, 240, 0.95);
+    border-radius: 15px;
+    border: 2px solid gold;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ 5. Mapy a fotky – integrované do obsahu */
+/* Mapy */
 .map-container {
     width: 100%;
     max-width: 800px;
     margin: 20px 0;
     border-radius: 15px;
     overflow: hidden;
+    border: 3px solid gold;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -111,7 +148,7 @@ body {
     border-radius: 15px;
 }
 
-/* ✅ 6. Fotogalerie – krásně zarovnaná */
+/* Fotogalerie */
 .photo-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -125,6 +162,7 @@ body {
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
+    border: 3px solid gold;
     transition: transform 0.3s ease-in-out;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -133,7 +171,7 @@ body {
     transform: scale(1.05);
 }
 
-/* ✅ 7. RESPONSIVNÍ DESIGN – na mobilu přizpůsobeno */
+/* Responsivní úpravy */
 @media screen and (max-width: 768px) {
     .countdown {
         flex-direction: column;
@@ -148,13 +186,13 @@ body {
     }
 }
 
-/* ✅ 8. Spodní část webu */
+/* Spodní část webu */
 .footer {
     text-align: center;
     padding: 20px;
     font-size: 1.2em;
     color: #5a3e36;
-    background-color: rgba(255, 250, 240, 0.9);
+    background-color: rgba(255, 250, 240, 0.95);
+    border-top: 2px solid gold;
     margin-top: 50px;
-    border-top: 2px solid #c08f70;
 }
