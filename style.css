@@ -66,7 +66,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Fotky a mapa budou vedle sebe */
 }
 
 /* Styl pro mapu */
@@ -80,7 +80,7 @@ h1 {
 
 .map-container iframe {
     width: 100%;
-    height: 250px;
+    height: 300px;
     border: none;
     border-radius: 15px;
 }
@@ -106,19 +106,14 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Styl pro tlačítko přepínání jazyků */
-button {
-    background: linear-gradient(to right, #c08f70, #a45d4a);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 8px;
-    font-family: 'Dancing Script', cursive;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: linear-gradient(to right, #a45d4a, #c08f70);
+/* RESPONSIVNÍ DESIGN – na mobilu budou fotky pod sebou */
+@media screen and (max-width: 768px) {
+    .location-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .map-container, .photo-gallery {
+        width: 100%;
+        max-width: 100%;
+    }
 }
