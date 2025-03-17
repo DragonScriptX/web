@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html lang=\"cs\">
+<html lang="cs">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Svatební oznámení - Daniel & Sechelela</title>
     <link rel="stylesheet" href="style.css"> <!-- Připojení CSS -->
-    <script src="script.js"></script>
 </head>
 <body>
-    <div class=\"floral-overlay\"></div>
-    <div class=\"container\">
+    <div class="floral-overlay"></div>
+    <div class="container">
         <h1>Daniel & Sechelela</h1>
-        <p id=\"intro\">Srdečně vás zveme na naši svatbu!</p>
-        <button class=\"lang-switch\" onclick=\"switchLanguage()\">🇬🇧 / 🇨🇿</button>
-        <div class=\"countdown\" id=\"countdown\">
-            <div><span id=\"days\">00</span><br><span id=\"days-label\">Dní</span></div>
-            <div><span id=\"hours\">00</span><br><span id=\"hours-label\">Hodin</span></div>
-            <div><span id=\"minutes\">00</span><br><span id=\"minutes-label\">Minut</span></div>
-            <div><span id=\"seconds\">00</span><br><span id=\"seconds-label\">Sekund</span></div>
+        <p id="intro">Srdečně vás zveme na naši svatbu!</p>
+        
+        <!-- Přepínač jazyků -->
+        <button class="lang-switch" onclick="switchLanguage()">🇬🇧 / 🇨🇿</button>
+
+        <!-- Odpočítávání času -->
+        <div class="countdown" id="countdown">
+            <div><span id="days">00</span><br><span id="days-label">Dní</span></div>
+            <div><span id="hours">00</span><br><span id="hours-label">Hodin</span></div>
+            <div><span id="minutes">00</span><br><span id="minutes-label">Minut</span></div>
+            <div><span id="seconds">00</span><br><span id="seconds-label">Sekund</span></div>
+        </div>
+
+        <!-- Místo obřadu -->
+        <div class="details">
+            <h2 id="details-title">Podrobnosti o svatbě</h2>
+            <p id="ceremony">Obřad:</p>
+            <p id="location">Poběžovický zámecký park, Nádražní 310, 345 22 Poběžovice</p>
+            <iframe 
+                class="map" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2600.477527!2d12.8057!3d49.5236!4m2!3m1!1s0x0:0x0"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Místo hostiny -->
+        <div class="details">
+            <p id="reception">Hostina a oslava:</p>
+            <p>Chodská Chalupa, Újezd 107, 344 01 Újezd</p>
+            <iframe 
+                class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2600.477527!2d12.8057!3d49.5236!4m2!3m1!1s0x0:0x0"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- RSVP Sekce -->
+        <div class="rsvp">
+            <h2 id="rsvp-title">Potvrďte svou účast</h2>
+            <p id="rsvp-text">Prosíme o potvrzení účasti do 15. března 2025.</p>
+            <button>Odeslat RSVP</button>
         </div>
     </div>
-    <script src=\"script.js\"></script> <!-- Připojení JavaScriptu -->
+
+    <script src="script.js" defer></script> <!-- Připojení JavaScriptu -->
 </body>
 </html>
