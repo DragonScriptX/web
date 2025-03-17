@@ -14,10 +14,7 @@ function loadSection(id, file, callback = null) {
 // Načítání sekcí při spuštění
 document.addEventListener("DOMContentLoaded", function () {
     loadSection("header", "header.html", loadText);
-    loadSection("countdown", "countdown.html", () => {
-        loadText();
-        startCountdown();
-    });
+    loadSection("countdown", "countdown.html", startCountdown);
     loadSection("pobezovice", "pobezovice.html", () => {
         loadText();
         loadData();
@@ -27,9 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         loadData();
     });
     loadSection("footer", "footer.html", loadText);
+
+    setupImageModal();
 });
 
-// Načtení textů z `text.json`
+// Funkce pro načtení textů z `text.json`
 async function loadText() {
     try {
         const response = await fetch("text.json");
@@ -121,6 +120,32 @@ function loadImages(elementId, images) {
         const img = document.createElement("img");
         img.src = imgSrc;
         img.alt = "Obrázek";
+        img.classList.add("clickable-image");
         gallery.appendChild(img);
+    });
+
+    setupImageModal();
+}
+
+// Funkce pro zvětšení fotek
+function setupImageModal() {
+    if (document.querySelector(".modal")) return; // Zamezení duplikace modálního okna
+
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+    document.body.appendChild(modal);
+
+    const img = document.createElement("img");
+    modal.appendChild(img);
+
+    modal.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    document.querySelectorAll(".clickable-image").forEach(image => {
+        image.addEventListener("click", () => {
+            img.src = image.src;
+            modal.style.display = "flex";
+        });
     });
 }
