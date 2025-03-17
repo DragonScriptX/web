@@ -76,20 +76,22 @@ body {
     border-radius: 10px;
 }
 
-/* 📍 Sekce místa (rozložení mapa + fotky) */
+/* 📍 Sekce místa (Mapa + Fotky vedle sebe) */
 .location-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     padding: 30px;
+    max-width: 900px;
+    margin: auto;
 }
 
 /* 🗺️ Mapa */
 .map-container {
     flex: 1;
-    max-width: 350px;
+    max-width: 45%;
     height: 250px;
     border-radius: 10px;
     overflow: hidden;
@@ -153,6 +155,7 @@ body {
     }
     .map-container {
         width: 100%;
+        max-width: 100%;
     }
     .photo-gallery {
         justify-content: center;
