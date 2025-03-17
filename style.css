@@ -56,12 +56,6 @@ h1 {
     gap: 10px;
 }
 
-.countdown div {
-    min-width: 120px;
-    text-align: center;
-    font-size: 1.8em;
-}
-
 button {
     background: linear-gradient(to right, #c08f70, #a45d4a);
     color: white;
