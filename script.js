@@ -1,6 +1,6 @@
 let currentLang = "cs"; // Výchozí jazyk
 
-// Funkce pro načtení souborů do stránky
+// Funkce pro načítání HTML částí
 function loadSection(id, file, callback = null) {
     fetch(file)
         .then(response => response.text())
@@ -13,16 +13,23 @@ function loadSection(id, file, callback = null) {
 
 // Načítání sekcí při spuštění
 document.addEventListener("DOMContentLoaded", function () {
-    loadSection("header", "header.html");
-    loadSection("countdown", "countdown.html", startCountdown);
-    loadSection("pobezovice", "pobezovice.html", loadData);
-    loadSection("chalupa", "chalupa.html", loadData);
-    loadSection("footer", "footer.html");
-
-    loadText();
+    loadSection("header", "header.html", loadText);
+    loadSection("countdown", "countdown.html", () => {
+        loadText();
+        startCountdown();
+    });
+    loadSection("pobezovice", "pobezovice.html", () => {
+        loadText();
+        loadData();
+    });
+    loadSection("chalupa", "chalupa.html", () => {
+        loadText();
+        loadData();
+    });
+    loadSection("footer", "footer.html", loadText);
 });
 
-// Funkce pro načtení textů ze `text.json`
+// Načtení textů z `text.json`
 async function loadText() {
     try {
         const response = await fetch("text.json");
@@ -44,6 +51,7 @@ async function loadText() {
         document.getElementById("chalupa-address").innerText = texts[currentLang].chalupa_address;
         document.getElementById("chalupa-description").innerText = texts[currentLang].chalupa_description;
 
+        document.getElementById("footer-text").innerText = texts[currentLang].footer_text;
     } catch (error) {
         console.error("Chyba při načítání `text.json`:", error);
     }
