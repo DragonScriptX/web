@@ -1,24 +1,22 @@
 let currentLang = "cs";
 
-// Funkce pro načtení souborů do stránky
-function loadSection(id, file) {
+// Funkce pro načtení HTML souborů do stránky
+function loadSection(id, file, callback = null) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
             document.getElementById(id).innerHTML = data;
-            if (id === "countdown") {
-                startCountdown(); // Spuštění odpočítávání po načtení sekce
-            }
+            if (callback) callback();
         })
         .catch(error => console.error(`Chyba při načítání ${file}:`, error));
 }
 
-// Načítání všech sekcí při startu
-document.addEventListener("DOMContentLoaded", function() {
+// Načítání sekcí při spuštění
+document.addEventListener("DOMContentLoaded", function () {
     loadSection("header", "header.html");
-    loadSection("countdown", "countdown.html");
-    loadSection("pobezovice", "pobezovice.html");
-    loadSection("chalupa", "chalupa.html");
+    loadSection("countdown", "countdown.html", startCountdown);
+    loadSection("pobezovice", "pobezovice.html", loadData);
+    loadSection("chalupa", "chalupa.html", loadData);
     loadSection("footer", "footer.html");
 
     loadText();
@@ -64,4 +62,44 @@ function startCountdown() {
             document.getElementById("seconds").innerText = seconds;
         }
     }, 1000);
+}
+
+// Funkce pro načítání map a obrázků z data.json
+async function loadData() {
+    try {
+        const response = await fetch("data.json");
+        const data = await response.json();
+
+        // Poběžovice
+        if (document.getElementById("pobezovice-map") && data.pobezovice) {
+            document.getElementById("pobezovice-map").src = data.pobezovice.map;
+        }
+        if (document.getElementById("pobezovice-gallery") && data.pobezovice.images.length > 0) {
+            loadImages("pobezovice-gallery", data.pobezovice.images);
+        }
+
+        // Chodská Chalupa
+        if (document.getElementById("chalupa-map") && data.chalupa) {
+            document.getElementById("chalupa-map").src = data.chalupa.map;
+        }
+        if (document.getElementById("chalupa-gallery") && data.chalupa.images.length > 0) {
+            loadImages("chalupa-gallery", data.chalupa.images);
+        }
+
+    } catch (error) {
+        console.error("Chyba při načítání `data.json`:", error);
+    }
+}
+
+// Funkce pro načtení obrázků do galerie
+function loadImages(elementId, images) {
+    const gallery = document.getElementById(elementId);
+    gallery.innerHTML = "";
+
+    images.forEach(imgSrc => {
+        const img = document.createElement("img");
+        img.src = imgSrc;
+        img.alt = "Obrázek";
+        gallery.appendChild(img);
+    });
 }
