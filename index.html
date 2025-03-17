@@ -14,20 +14,30 @@
         <!-- Přepínač jazyků -->
         <button class="lang-switch" onclick="switchLanguage()">🇬🇧 / 🇨🇿</button>
 
-        <!-- Místo obřadu - Poběžovický zámecký park -->
+        <!-- Sekce Poběžovický zámecký park -->
         <div class="details">
             <h2 id="pobezovice-title"></h2>
             <p id="pobezovice-address"></p>
-            <iframe id="pobezovice-map" class="map-container" allowfullscreen="" loading="lazy"></iframe>
-            <div id="pobezovice-gallery" class="photo-gallery"></div>
+
+            <div class="location-container">
+                <div class="map-container">
+                    <iframe id="pobezovice-map" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div id="pobezovice-gallery" class="photo-gallery"></div>
+            </div>
         </div>
 
-        <!-- Místo hostiny - Chodská Chalupa -->
+        <!-- Sekce Chodská Chalupa -->
         <div class="details">
             <h2 id="chalupa-title"></h2>
             <p id="chalupa-address"></p>
-            <iframe id="chalupa-map" class="map-container" allowfullscreen="" loading="lazy"></iframe>
-            <div id="chalupa-gallery" class="photo-gallery"></div>
+
+            <div class="location-container">
+                <div class="map-container">
+                    <iframe id="chalupa-map" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div id="chalupa-gallery" class="photo-gallery"></div>
+            </div>
         </div>
     </div>
 
