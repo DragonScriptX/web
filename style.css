@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
-/* Celý web */
+/* 🎨 CELÝ WEB – jednotné a moderní zobrazení */
 body {
     font-family: 'Playfair Display', serif;
     text-align: center;
@@ -8,27 +8,26 @@ body {
     color: #5a3e36;
     margin: 0;
     padding: 0;
-    background-image: url('background.jpg');
+    background-image: url('background.jpg'); /* Jemné květinové pozadí */
     background-size: cover;
     background-attachment: fixed;
 }
 
-/* Kontejner hlavního obsahu */
-.container {
+/* 🎨 HLAVNÍ OBSAH – sjednocený design */
+.main-container {
     max-width: 900px;
     margin: auto;
-    padding: 20px;
-    background: rgba(255, 250, 240, 0.9);
+    padding: 40px 20px;
+    background: rgba(255, 250, 240, 0.95); /* Jemná průhlednost */
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 1;
 }
 
-/* ✅ 1. Header – Záhlaví s jmény */
+/* ✅ 1. Header – Název svatby */
 .header {
     text-align: center;
-    padding: 20px;
+    padding: 40px 0;
 }
 
 .header h1 {
@@ -62,32 +61,22 @@ body {
     background: linear-gradient(to right, #a45d4a, #c08f70);
 }
 
-/* ✅ 3. Odpočítávání času */
+/* ✅ 3. Odpočítávání – krásně integrované */
 .countdown {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 20px 0;
-    padding: 10px;
+    gap: 25px;
+    margin: 30px 0;
     font-family: 'Dancing Script', cursive;
-    font-size: 2em;
+    font-size: 2.5em;
     color: #a45d4a;
     font-weight: bold;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid #c08f70;
 }
 
 .countdown div {
     min-width: 100px;
     text-align: center;
     font-size: 2em;
-    padding: 10px;
-    background: #fff6f0;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .countdown span {
@@ -97,53 +86,44 @@ body {
     color: #5a3e36;
 }
 
-/* ✅ 4. Sekce s místy – Poběžovický zámecký park a Chodská Chalupa */
-.details {
-    margin-top: 30px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid #c08f70;
-}
-
-/* ✅ 5. Mapy a fotky vedle sebe */
+/* ✅ 4. Sekce míst – Poběžovický zámecký park a Chodská Chalupa */
 .location-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    margin: 40px 0;
 }
 
-/* Styl pro mapu */
+/* ✅ 5. Mapy a fotky – integrované do obsahu */
 .map-container {
-    width: 50%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .map-container iframe {
     width: 100%;
-    height: 250px;
+    height: 350px;
     border: none;
     border-radius: 15px;
 }
 
-/* ✅ 6. Fotogalerie */
+/* ✅ 6. Fotogalerie – krásně zarovnaná */
 .photo-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 50%;
-    max-width: 400px;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .photo-gallery img {
-    width: 48%;
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -153,19 +133,18 @@ body {
     transform: scale(1.05);
 }
 
-/* ✅ 7. RESPONSIVNÍ DESIGN – na mobilu fotky pod sebou */
+/* ✅ 7. RESPONSIVNÍ DESIGN – na mobilu přizpůsobeno */
 @media screen and (max-width: 768px) {
-    .location-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .map-container, .photo-gallery {
-        width: 100%;
-        max-width: 100%;
-    }
     .countdown {
         flex-direction: column;
         gap: 10px;
+    }
+    .map-container {
+        height: 300px;
+    }
+    .photo-gallery {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -176,5 +155,6 @@ body {
     font-size: 1.2em;
     color: #5a3e36;
     background-color: rgba(255, 250, 240, 0.9);
+    margin-top: 50px;
     border-top: 2px solid #c08f70;
 }
