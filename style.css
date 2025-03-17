@@ -12,6 +12,7 @@ body {
     background-attachment: fixed;
 }
 
+/* Kontejner hlavního obsahu */
 .container {
     max-width: 800px;
     margin: auto;
@@ -23,27 +24,14 @@ body {
     z-index: 1;
 }
 
-.floral-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('An_elegant_floral_decoration_in_blush_pink_and_gol.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center top;
-    pointer-events: none;
-    opacity: 0.8;
-    z-index: 0;
-}
-
+/* Styl pro nadpis */
 h1 {
     font-size: 5em;
     font-family: 'Great Vibes', cursive;
     color: #c08f70;
 }
 
+/* Styl pro odpočítávání času */
 .countdown {
     font-size: 2em;
     font-family: 'Dancing Script', cursive;
@@ -56,23 +44,23 @@ h1 {
     gap: 10px;
 }
 
-button {
-    background: linear-gradient(to right, #c08f70, #a45d4a);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 8px;
-    font-family: 'Dancing Script', cursive;
-    transition: 0.3s;
+.countdown div {
+    min-width: 120px;
+    text-align: center;
+    font-size: 1.8em;
 }
 
-button:hover {
-    background: linear-gradient(to right, #a45d4a, #c08f70);
+/* Styl pro sekce s informacemi */
+.details {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #c08f70;
 }
 
-/* ===== Mapy + Fotky vedle sebe ===== */
+/* Styl pro mapy a fotky */
 .location-container {
     display: flex;
     justify-content: space-between;
@@ -81,7 +69,7 @@ button:hover {
     flex-wrap: wrap;
 }
 
-/* Styl pro mapy */
+/* Styl pro mapu */
 .map-container {
     width: 50%;
     max-width: 400px;
@@ -97,28 +85,40 @@ button:hover {
     border-radius: 15px;
 }
 
-/* Styl pro fotky míst */
-.photo-container {
+/* Styl pro fotogalerii */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 50%;
     max-width: 400px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
 }
 
-.photo-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    object-fit: cover;
-}
-
-/* ===== Styl pro RSVP sekci ===== */
-.rsvp {
-    margin-top: 20px;
-    padding: 20px;
-    background: white;
+.photo-gallery img {
+    width: 48%;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid #c08f70;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Styl pro tlačítko přepínání jazyků */
+button {
+    background: linear-gradient(to right, #c08f70, #a45d4a);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Dancing Script', cursive;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(to right, #a45d4a, #c08f70);
 }
