@@ -76,13 +76,12 @@ body {
     border-radius: 10px;
 }
 
-/* 📍 Sekce místa (Mapa + Fotky vedle sebe) */
+/* 📍 Sekce místa (Mapa pod nadpisem, fotky pod mapou) */
 .location-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
     padding: 30px;
     max-width: 900px;
     margin: auto;
@@ -90,9 +89,9 @@ body {
 
 /* 🗺️ Mapa */
 .map-container {
-    flex: 1;
-    max-width: 45%;
-    height: 250px;
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -107,16 +106,16 @@ body {
 
 /* 📷 Fotogalerie */
 .photo-gallery {
-    flex: 1;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .photo-gallery img {
-    width: 100px;
-    height: 80px;
+    width: 120px;
+    height: 90px;
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
@@ -149,15 +148,15 @@ body {
 
 /* 📱 Responsivní úpravy */
 @media screen and (max-width: 768px) {
-    .location-container {
-        flex-direction: column;
-        align-items: center;
-    }
     .map-container {
         width: 100%;
-        max-width: 100%;
+        height: 250px;
     }
     .photo-gallery {
         justify-content: center;
+    }
+    .photo-gallery img {
+        width: 100px;
+        height: 75px;
     }
 }
