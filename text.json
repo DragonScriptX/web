@@ -1,0 +1,26 @@
+{
+    "cs": {
+        "title": "Daniel & Sechelela",
+        "invitation": "Srdečně vás zveme na naši svatbu!",
+        "countdown_days": "Dní",
+        "countdown_hours": "Hodin",
+        "countdown_minutes": "Minut",
+        "countdown_seconds": "Sekund",
+        "pobezovice_title": "Poběžovický zámecký park",
+        "pobezovice_address": "Nádražní 310, 345 22 Poběžovice",
+        "chalupa_title": "Chodská Chalupa",
+        "chalupa_address": "Újezd 107, 344 01 Újezd"
+    },
+    "en": {
+        "title": "Daniel & Sechelela",
+        "invitation": "We warmly invite you to our wedding!",
+        "countdown_days": "Days",
+        "countdown_hours": "Hours",
+        "countdown_minutes": "Minutes",
+        "countdown_seconds": "Seconds",
+        "pobezovice_title": "Poběžovice Castle Park",
+        "pobezovice_address": "Nádražní 310, 345 22 Poběžovice",
+        "chalupa_title": "Chodská Chalupa",
+        "chalupa_address": "Újezd 107, 344 01 Újezd"
+    }
+}
