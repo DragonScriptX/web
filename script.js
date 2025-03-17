@@ -1,6 +1,6 @@
-let currentLang = "cs";
+let currentLang = "cs"; // Výchozí jazyk
 
-// Funkce pro načtení HTML souborů do stránky
+// Funkce pro načtení souborů do stránky
 function loadSection(id, file, callback = null) {
     fetch(file)
         .then(response => response.text())
@@ -22,18 +22,31 @@ document.addEventListener("DOMContentLoaded", function () {
     loadText();
 });
 
-// Funkce pro načtení textů
+// Funkce pro načtení textů ze `text.json`
 async function loadText() {
-    const response = await fetch("text.json");
-    const texts = await response.json();
+    try {
+        const response = await fetch("text.json");
+        const texts = await response.json();
 
-    document.getElementById("page-title").innerText = texts[currentLang].title;
-    document.getElementById("invitation-text").innerText = texts[currentLang].invitation;
+        document.getElementById("page-title").innerText = texts[currentLang].title;
+        document.getElementById("invitation-text").innerText = texts[currentLang].invitation;
 
-    document.getElementById("days-label").innerText = texts[currentLang].countdown_days;
-    document.getElementById("hours-label").innerText = texts[currentLang].countdown_hours;
-    document.getElementById("minutes-label").innerText = texts[currentLang].countdown_minutes;
-    document.getElementById("seconds-label").innerText = texts[currentLang].countdown_seconds;
+        document.getElementById("days-label").innerText = texts[currentLang].countdown_days;
+        document.getElementById("hours-label").innerText = texts[currentLang].countdown_hours;
+        document.getElementById("minutes-label").innerText = texts[currentLang].countdown_minutes;
+        document.getElementById("seconds-label").innerText = texts[currentLang].countdown_seconds;
+
+        document.getElementById("pobezovice-title").innerText = texts[currentLang].pobezovice_title;
+        document.getElementById("pobezovice-address").innerText = texts[currentLang].pobezovice_address;
+        document.getElementById("pobezovice-description").innerText = texts[currentLang].pobezovice_description;
+
+        document.getElementById("chalupa-title").innerText = texts[currentLang].chalupa_title;
+        document.getElementById("chalupa-address").innerText = texts[currentLang].chalupa_address;
+        document.getElementById("chalupa-description").innerText = texts[currentLang].chalupa_description;
+
+    } catch (error) {
+        console.error("Chyba při načítání `text.json`:", error);
+    }
 }
 
 // Přepínání jazyků
@@ -64,7 +77,7 @@ function startCountdown() {
     }, 1000);
 }
 
-// Funkce pro načítání map a obrázků z data.json
+// Funkce pro načítání map a obrázků z `data.json`
 async function loadData() {
     try {
         const response = await fetch("data.json");
