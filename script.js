@@ -1,28 +1,57 @@
-let lang = 'cz';
+let currentLang = "cs";
 
+// Funkce pro načtení JSON souborů s texty a daty
+async function loadContent() {
+    const textResponse = await fetch("text.json");
+    const texts = await textResponse.json();
+
+    const dataResponse = await fetch("data.json");
+    const data = await dataResponse.json();
+
+    // Aktualizace textů
+    document.getElementById("title").innerText = texts[currentLang].title;
+    document.getElementById("page-title").innerText = texts[currentLang].title;
+    document.getElementById("invitation-text").innerText = texts[currentLang].invitation;
+
+    document.getElementById("days-label").innerText = texts[currentLang].countdown_days;
+    document.getElementById("hours-label").innerText = texts[currentLang].countdown_hours;
+    document.getElementById("minutes-label").innerText = texts[currentLang].countdown_minutes;
+    document.getElementById("seconds-label").innerText = texts[currentLang].countdown_seconds;
+
+    document.getElementById("pobezovice-title").innerText = texts[currentLang].pobezovice_title;
+    document.getElementById("pobezovice-address").innerText = texts[currentLang].pobezovice_address;
+
+    document.getElementById("chalupa-title").innerText = texts[currentLang].chalupa_title;
+    document.getElementById("chalupa-address").innerText = texts[currentLang].chalupa_address;
+
+    // Načtení map
+    document.getElementById("pobezovice-map").src = data.pobezovice.map;
+    document.getElementById("chalupa-map").src = data.chalupa.map;
+
+    // Načtení obrázků
+    loadImages("pobezovice-gallery", data.pobezovice.images);
+    loadImages("chalupa-gallery", data.chalupa.images);
+}
+
+// Funkce pro načtení obrázků do galerie
+function loadImages(elementId, images) {
+    const gallery = document.getElementById(elementId);
+    gallery.innerHTML = "";
+    images.forEach(imgSrc => {
+        const img = document.createElement("img");
+        img.src = imgSrc;
+        img.alt = "Obrázek";
+        gallery.appendChild(img);
+    });
+}
+
+// Přepínač jazyků
 function switchLanguage() {
-    lang = lang === 'cz' ? 'en' : 'cz';
-
-    document.getElementById("intro").innerText = lang === 'cz' ? 
-        "Srdečně vás zveme na naši svatbu!" : 
-        "We warmly invite you to our wedding!";
-    
-    document.getElementById("days-label").innerText = lang === 'cz' ? "Dní" : "Days";
-    document.getElementById("hours-label").innerText = lang === 'cz' ? "Hodin" : "Hours";
-    document.getElementById("minutes-label").innerText = lang === 'cz' ? "Minut" : "Minutes";
-    document.getElementById("seconds-label").innerText = lang === 'cz' ? "Sekund" : "Seconds";
+    currentLang = currentLang === "cs" ? "en" : "cs";
+    loadContent();
 }
 
-function updateCountdown() {
-    const weddingDate = new Date("April 19, 2025 12:00:00").getTime();
-    setInterval(() => {
-        const now = new Date().getTime();
-        const timeLeft = weddingDate - now;
-        document.getElementById("days").innerText = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        document.getElementById("hours").innerText = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        document.getElementById("minutes").innerText = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        document.getElementById("seconds").innerText = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    }, 1000);
-}
-
-updateCountdown();
+// Načtení textů, map a obrázků při načtení stránky
+document.addEventListener("DOMContentLoaded", function() {
+    loadContent();
+});
