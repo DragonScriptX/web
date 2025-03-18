@@ -16,7 +16,7 @@ body {
     margin: 50px auto;
     padding: 40px;
     background: rgba(255, 250, 240, 0.98);
-    border-radius: 15px;
+    border-radius: 20px; /* ✨ Zakulacené rohy */
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
@@ -67,7 +67,7 @@ body {
     padding: 12px 24px;
     font-size: 1.5em;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 15px; /* ✨ Zakulacené rohy */
     font-family: 'Dancing Script', cursive;
     transition: 0.3s;
 }
@@ -92,7 +92,7 @@ body {
     width: 80%;
     max-width: 500px;
     height: 280px;
-    border-radius: 10px;
+    border-radius: 20px; /* ✨ Zakulacené rohy */
     overflow: hidden;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -101,7 +101,7 @@ body {
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px; /* ✨ Zakulacené rohy */
 }
 
 /* 📷 Fotogalerie */
@@ -117,7 +117,7 @@ body {
     width: 120px;
     height: 90px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 15px; /* ✨ Zakulacené rohy */
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -143,7 +143,7 @@ body {
 .modal img {
     max-width: 80%;
     max-height: 80%;
-    border-radius: 10px;
+    border-radius: 20px; /* ✨ Zakulacené rohy */
 }
 
 /* 📱 Responsivní úpravy */
@@ -152,11 +152,18 @@ body {
         width: 100%;
         height: 250px;
     }
+    
     .photo-gallery {
         justify-content: center;
     }
+    
     .photo-gallery img {
         width: 100px;
         height: 75px;
+    }
+    
+    .corner {
+        width: 150px;
+        height: 150px;
     }
 }
