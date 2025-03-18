@@ -23,23 +23,13 @@ body {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
-}
-
-/* 🌿 Květinové dekorace – Umístění do rohů stránky */
-.corner {
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background-size: contain;
+    
+    /* 🌿 Přidání květinového designu uvnitř okna */
+    background-image: url('1.webp'), url('2.webp'), url('3.webp'), url('4.webp');
+    background-position: top left, top right, bottom left, bottom right;
     background-repeat: no-repeat;
-    pointer-events: none;
-    z-index: 5;
+    background-size: 250px;
 }
-
-#corner-1 { top: 0; left: 0; background-image: url('1.webp'); }
-#corner-2 { top: 0; right: 0; background-image: url('2.webp'); }
-#corner-3 { bottom: 0; left: 0; background-image: url('3.webp'); }
-#corner-4 { bottom: 0; right: 0; background-image: url('4.webp'); }
 
 /* ✨ Hlavní nadpis */
 .header h1 {
@@ -72,26 +62,6 @@ body {
 
 .lang-switch:hover {
     background: linear-gradient(to right, #A45D4A, #C08F70);
-}
-
-/* ⏳ Odpočítávání */
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin: 30px 0;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5em;
-    color: gold;
-}
-
-.countdown div {
-    min-width: 100px;
-    text-align: center;
-    font-size: 2em;
-    background: rgba(255, 245, 230, 0.7);
-    padding: 10px;
-    border-radius: 10px;
 }
 
 /* 📍 Sekce místa (Mapa pod nadpisem, fotky pod mapou) */
@@ -177,25 +147,4 @@ body {
         width: 100px;
         height: 75px;
     }
-}
-
-/* 🎨 Skrytí rušivých prvků v Google Maps */
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 10px;
-}
-
-/* Skrytí rušivých prvků */
-.gm-style-cc,  /* "Data mapy", "Smluvní podmínky", "Nahlásit chybu v mapě" */
-.gmnoprint,     /* Ovládací prvky */
-.gm-style-mtc,  /* Klávesové zkratky */
-.gm-fullscreen-control {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    width: 0 !important;
-    pointer-events: none !important;
 }
