@@ -35,8 +35,8 @@ html, body {
 /* 🌿 Květinové rohy */
 .corner {
     position: fixed; /* Fixní pozice zajistí správné zarovnání */
-    width: 260px;  
-    height: 260px;
+    width: 360px;  
+    height: 360px;
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
