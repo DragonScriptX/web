@@ -160,3 +160,22 @@ body {
         height: 75px;
     }
 }
+/* Skrytí rušivých prvků v Google Maps Embed */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    pointer-events: none; /* Zabrání interakci s mapou (zoom, posun) */
+}
+
+.gm-style-cc, /* Skryje "Data mapy", "Smluvní podmínky", "Nahlásit chybu" */
+.gm-svpc,
+.gmnoprint,
+.gmnoprint a {
+    display: none !important;
+}
+
+.gm-fullscreen-control {
+    display: none !important; /* Skryje tlačítko "Celá obrazovka" */
+}
