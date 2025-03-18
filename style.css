@@ -25,8 +25,8 @@ body {
 /* 🌿 Květinové rohy */
 .corner {
     position: absolute;
-    width: 280px;  /* ✅ Zvětšení */
-    height: 280px; /* ✅ Zvětšení */
+    width: 400px;  /* ✅ Zvětšení */
+    height: 400px; /* ✅ Zvětšení */
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
