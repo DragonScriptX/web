@@ -4,13 +4,10 @@
 body {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    background-color: #FAF3E0; /* Jemné krémové pozadí */
+    background: linear-gradient(to bottom, #e6eaf2, #f8f4ee); /* Jemná světle modrá & béžová */
     color: #5A3E36; /* Tmavě hnědá pro text */
     margin: 0;
     padding: 0;
-    background-image: url('paper_texture.jpg'); /* Jemná textura */
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 /* 📜 Hlavní kontejner */
@@ -24,12 +21,27 @@ body {
     position: relative;
     z-index: 10;
     
-    /* 🌿 Přidání květinového designu uvnitř okna */
+    /* 🌿 Květinový design uvnitř okna */
     background-image: url('1.webp'), url('2.webp'), url('3.webp'), url('4.webp');
     background-position: top left, top right, bottom left, bottom right;
     background-repeat: no-repeat;
-    background-size: 250px;
+    background-size: 200px;
 }
+
+/* 🌿 Květinové rohy uvnitř hlavního okna */
+.corner {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+#corner-1 { top: 0; left: 0; background-image: url('1.webp'); }
+#corner-2 { top: 0; right: 0; background-image: url('2.webp'); }
+#corner-3 { bottom: 0; left: 0; background-image: url('3.webp'); }
+#corner-4 { bottom: 0; right: 0; background-image: url('4.webp'); }
 
 /* ✨ Hlavní nadpis */
 .header h1 {
@@ -78,8 +90,8 @@ body {
 /* 🗺️ Mapa */
 .map-container {
     width: 80%;
-    max-width: 600px;
-    height: 300px;
+    max-width: 500px;
+    height: 280px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
