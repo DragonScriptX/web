@@ -160,7 +160,7 @@ body {
         height: 75px;
     }
 }
-/* Skrytí rušivých prvků v Google Maps Embed */
+/* Upravíme mapu, aby byla čistá a vizuálně přehledná */
 .map-container iframe {
     width: 100%;
     height: 100%;
@@ -168,14 +168,11 @@ body {
     border-radius: 10px;
 }
 
-/* Skrytí "Data mapy", "Smluvní podmínky", "Nahlásit chybu v mapě" */
-.gm-style-cc,
-.gm-style-cc div,
-.gmnoprint,
-.gmnoprint a,
-.gm-style-mtc, /* Skryje klávesové zkratky */
-.gm-style-cc button, /* Skryje tlačítka pro nahlášení chyby */
-.gm-control-active.gm-fullscreen-control { 
+/* Skrytí rušivých prvků */
+.gm-style-cc,  /* "Data mapy", "Smluvní podmínky", "Nahlásit chybu v mapě" */
+.gmnoprint,     /* Ovládací prvky */
+.gm-style-mtc,  /* Klávesové zkratky */
+.gm-fullscreen-control {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
