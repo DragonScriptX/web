@@ -4,13 +4,13 @@
 html, body {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    background: linear-gradient(to bottom, #e6eaf2, #f8f4ee); /* Jemná světle modrá & béžová */
+    background: linear-gradient(to bottom, #e6eaf2, #f8f4ee); /* Jemný modro-krémový přechod */
     color: #5A3E36; /* Tmavě hnědá pro text */
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Zabrání horizontálnímu posuvu */
+    overflow-x: hidden; /* Zabrání horizontálnímu posunu */
     position: relative;
 }
 
@@ -20,17 +20,23 @@ html, body {
     margin: 50px auto;
     padding: 40px;
     background: rgba(255, 250, 240, 0.98);
-    border-radius: 20px; /* ✨ Zakulacené rohy */
+    border-radius: 20px; /* Zakulacené rohy */
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
+
+    /* 🌿 Květinový motiv uvnitř okna */
+    background-image: url('1.webp'), url('2.webp'), url('3.webp'), url('4.webp');
+    background-position: top left, top right, bottom left, bottom right;
+    background-repeat: no-repeat;
+    background-size: 200px;
 }
 
 /* 🌿 Květinové rohy */
 .corner {
-    position: fixed; /* ✅ Umožní správné zarovnání */
-    width: 250px;  
-    height: 250px;
+    position: fixed; /* Fixní pozice zajistí správné zarovnání */
+    width: 260px;  
+    height: 260px;
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
@@ -42,35 +48,63 @@ html, body {
     top: 0;
     left: 0;
     background-image: url('1.webp');
-    background-position: top left;
 }
 
 #corner-2 {
     top: 0;
     right: 0;
     background-image: url('2.webp');
-    background-position: top right;
 }
 
 #corner-3 {
     bottom: 0;
     left: 0;
     background-image: url('3.webp');
-    background-position: bottom left;
 }
 
 #corner-4 {
     bottom: 0;
     right: 0;
     background-image: url('4.webp');
-    background-position: bottom right;
 }
 
-/* ✅ Oprava odskočení květinových rohů */
+/* 🌿 Oprava odskočení */
 .corner {
-    background-position: center;
     margin: 0;
     padding: 0;
+}
+
+/* ✨ Hlavní nadpis */
+.header h1 {
+    font-size: 5em;
+    font-family: 'Great Vibes', cursive;
+    color: #3A5A40; /* Elegantní tmavší tón */
+    margin-bottom: 10px;
+}
+
+/* ✉️ Podnadpis */
+.header p {
+    font-size: 1.8em;
+    font-family: 'Dancing Script', cursive;
+    color: #5A3E36;
+}
+
+/* 🌍 Tlačítko pro přepínání jazyků */
+.lang-switch {
+    margin-top: 10px;
+    background: linear-gradient(to right, #9E7040, #7A4A2A);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 15px; /* Zakulacené rohy */
+    font-family: 'Dancing Script', cursive;
+    transition: 0.3s;
+}
+
+.lang-switch:hover {
+    background: linear-gradient(to right, #7A4A2A, #9E7040);
 }
 
 /* 📍 Sekce místa (Mapa pod nadpisem, fotky pod mapou) */
@@ -89,7 +123,7 @@ html, body {
     width: 80%;
     max-width: 500px;
     height: 280px;
-    border-radius: 20px; /* ✨ Zakulacené rohy */
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -98,7 +132,7 @@ html, body {
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 20px; /* ✨ Zakulacené rohy */
+    border-radius: 20px;
 }
 
 /* 📷 Fotogalerie */
@@ -114,7 +148,7 @@ html, body {
     width: 120px;
     height: 90px;
     object-fit: cover;
-    border-radius: 15px; /* ✨ Zakulacené rohy */
+    border-radius: 15px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -140,7 +174,7 @@ html, body {
 .modal img {
     max-width: 80%;
     max-height: 80%;
-    border-radius: 20px; /* ✨ Zakulacené rohy */
+    border-radius: 20px;
 }
 
 /* 📱 Responsivní úpravy */
