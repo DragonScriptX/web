@@ -169,3 +169,22 @@ function setupImageModal() {
         });
     });
 }
+function removeGoogleMapsElements() {
+    const observer = new MutationObserver(() => {
+        const unwantedElements = document.querySelectorAll(
+            ".gm-style-cc, /* Smluvní podmínky, Data mapy */ " +
+            ".gmnoprint, /* Ovládací prvky */ " +
+            ".gm-style-mtc, /* Klávesové zkratky */ " +
+            ".gm-fullscreen-control" /* Tlačítko na fullscreen */
+        );
+
+        unwantedElements.forEach(element => element.remove());
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+document.addEventListener("DOMContentLoaded", removeGoogleMapsElements);
