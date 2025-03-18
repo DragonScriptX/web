@@ -21,7 +21,25 @@ body {
     background: rgba(255, 250, 240, 0.98);
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
 }
+
+/* 🌿 Květinové dekorace – Umístění do rohů stránky */
+.corner {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 5;
+}
+
+#corner-1 { top: 0; left: 0; background-image: url('1.webp'); }
+#corner-2 { top: 0; right: 0; background-image: url('2.webp'); }
+#corner-3 { bottom: 0; left: 0; background-image: url('3.webp'); }
+#corner-4 { bottom: 0; right: 0; background-image: url('4.webp'); }
 
 /* ✨ Hlavní nadpis */
 .header h1 {
@@ -160,7 +178,8 @@ body {
         height: 75px;
     }
 }
-/* Upravíme mapu, aby byla čistá a vizuálně přehledná */
+
+/* 🎨 Skrytí rušivých prvků v Google Maps */
 .map-container iframe {
     width: 100%;
     height: 100%;
