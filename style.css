@@ -4,7 +4,7 @@
 body {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    background: linear-gradient(to bottom, #e6eaf2, #f8f4ee); /* Jemná modrá & béžová */
+    background: linear-gradient(to bottom, #e6eaf2, #f8f4ee); /* Jemná světle modrá & béžová */
     color: #5A3E36; /* Tmavě hnědá pro text */
     margin: 0;
     padding: 0;
@@ -13,83 +13,54 @@ body {
 /* 📜 Hlavní kontejner */
 .main-container {
     max-width: 900px;
-    margin: 60px auto;
+    margin: 50px auto;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.95); /* Jemné bílé pozadí */
+    background: rgba(255, 250, 240, 0.98);
     border-radius: 20px; /* ✨ Zakulacené rohy */
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
 }
 
-/* 🌿 Květinové rohy (Přidáno pro lepší umístění do layoutu) */
+/* 🌿 Květinové rohy */
 .corner {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 280px;  /* ✅ Zvětšení */
+    height: 280px; /* ✅ Zvětšení */
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
-    z-index: -1;
+    border-radius: 20px; /* ✅ Zakulacené rohy */
 }
 
-#corner-1 { top: 0; left: 0; background-image: url('1.webp'); }
-#corner-2 { top: 0; right: 0; background-image: url('2.webp'); }
-#corner-3 { bottom: 0; left: 0; background-image: url('3.webp'); }
-#corner-4 { bottom: 0; right: 0; background-image: url('4.webp'); }
-
-/* ✨ Hlavní nadpis */
-.header h1 {
-    font-size: 5em;
-    font-family: 'Great Vibes', cursive;
-    color: #3B5166; /* Modrá odpovídající květinám */
-    margin-bottom: 10px;
+/* ✅ Korekce umístění rohů */
+#corner-1 {
+    top: 0;
+    left: 0;
+    background-image: url('1.webp');
 }
 
-/* ✉️ Podnadpis */
-.header p {
-    font-size: 1.8em;
-    font-family: 'Dancing Script', cursive;
-    color: #5A3E36;
+#corner-2 {
+    top: 0;
+    right: 0;
+    background-image: url('2.webp');
 }
 
-/* 🌍 Tlačítko pro přepínání jazyků */
-.lang-switch {
-    margin-top: 10px;
-    background: linear-gradient(to right, #3B5166, #A45D4A);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 15px; /* ✨ Zakulacené rohy */
-    font-family: 'Dancing Script', cursive;
-    transition: 0.3s;
+#corner-3 {
+    bottom: 0;
+    left: 0;
+    background-image: url('3.webp');
 }
 
-.lang-switch:hover {
-    background: linear-gradient(to right, #A45D4A, #3B5166);
+#corner-4 {
+    bottom: 0;
+    right: 0;
+    background-image: url('4.webp');
 }
 
-/* ⏳ Odpočítávání */
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin: 30px 0;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5em;
-    color: gold;
-    flex-wrap: wrap;
-}
-
-.countdown div {
-    min-width: 100px;
-    text-align: center;
-    font-size: 2em;
-    background: rgba(255, 245, 230, 0.7);
-    padding: 10px;
-    border-radius: 10px;
+/* ✅ Oprava odskočení květinových rohů */
+.corner {
+    background-position: center;
 }
 
 /* 📍 Sekce místa (Mapa pod nadpisem, fotky pod mapou) */
@@ -178,8 +149,9 @@ body {
         height: 75px;
     }
     
+    /* ✅ Zmenšení rohů květin pro mobilní verzi */
     .corner {
-        width: 120px;
-        height: 120px;
+        width: 200px;
+        height: 200px;
     }
 }
