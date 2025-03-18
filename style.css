@@ -4,7 +4,7 @@
 body {
     font-family: 'Playfair Display', serif;
     text-align: center;
-    background: linear-gradient(to bottom, #e6eaf2, #f8f4ee); /* Jemná světle modrá & béžová */
+    background: linear-gradient(to bottom, #e6eaf2, #f8f4ee); /* Jemná modrá & béžová */
     color: #5A3E36; /* Tmavě hnědá pro text */
     margin: 0;
     padding: 0;
@@ -13,22 +13,16 @@ body {
 /* 📜 Hlavní kontejner */
 .main-container {
     max-width: 900px;
-    margin: 50px auto;
+    margin: 60px auto;
     padding: 40px;
-    background: rgba(255, 250, 240, 0.98);
+    background: rgba(255, 255, 255, 0.95); /* Jemné bílé pozadí */
     border-radius: 20px; /* ✨ Zakulacené rohy */
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
-    
-    /* 🌿 Květinový design uvnitř okna */
-    background-image: url('1.webp'), url('2.webp'), url('3.webp'), url('4.webp');
-    background-position: top left, top right, bottom left, bottom right;
-    background-repeat: no-repeat;
-    background-size: 200px;
 }
 
-/* 🌿 Květinové rohy uvnitř hlavního okna */
+/* 🌿 Květinové rohy (Přidáno pro lepší umístění do layoutu) */
 .corner {
     position: absolute;
     width: 200px;
@@ -36,6 +30,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
+    z-index: -1;
 }
 
 #corner-1 { top: 0; left: 0; background-image: url('1.webp'); }
@@ -47,7 +42,7 @@ body {
 .header h1 {
     font-size: 5em;
     font-family: 'Great Vibes', cursive;
-    color: #C08F70;
+    color: #3B5166; /* Modrá odpovídající květinám */
     margin-bottom: 10px;
 }
 
@@ -61,7 +56,7 @@ body {
 /* 🌍 Tlačítko pro přepínání jazyků */
 .lang-switch {
     margin-top: 10px;
-    background: linear-gradient(to right, #C08F70, #A45D4A);
+    background: linear-gradient(to right, #3B5166, #A45D4A);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -73,7 +68,28 @@ body {
 }
 
 .lang-switch:hover {
-    background: linear-gradient(to right, #A45D4A, #C08F70);
+    background: linear-gradient(to right, #A45D4A, #3B5166);
+}
+
+/* ⏳ Odpočítávání */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    color: gold;
+    flex-wrap: wrap;
+}
+
+.countdown div {
+    min-width: 100px;
+    text-align: center;
+    font-size: 2em;
+    background: rgba(255, 245, 230, 0.7);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 /* 📍 Sekce místa (Mapa pod nadpisem, fotky pod mapou) */
@@ -163,7 +179,7 @@ body {
     }
     
     .corner {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 }
