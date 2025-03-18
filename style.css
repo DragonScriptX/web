@@ -29,7 +29,7 @@ html, body {
     background-image: url('1.webp'), url('2.webp'), url('3.webp'), url('4.webp');
     background-position: top left, top right, bottom left, bottom right;
     background-repeat: no-repeat;
-    background-size: 200px;
+    background-size: 330px;
 }
 
 /* 🌿 Květinové rohy */
