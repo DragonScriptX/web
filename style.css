@@ -166,16 +166,20 @@ body {
     height: 100%;
     border: none;
     border-radius: 10px;
-    pointer-events: none; /* Zabrání interakci s mapou (zoom, posun) */
 }
 
-.gm-style-cc, /* Skryje "Data mapy", "Smluvní podmínky", "Nahlásit chybu" */
-.gm-svpc,
+/* Skrytí "Data mapy", "Smluvní podmínky", "Nahlásit chybu v mapě" */
+.gm-style-cc,
+.gm-style-cc div,
 .gmnoprint,
-.gmnoprint a {
+.gmnoprint a,
+.gm-style-mtc, /* Skryje klávesové zkratky */
+.gm-style-cc button, /* Skryje tlačítka pro nahlášení chyby */
+.gm-control-active.gm-fullscreen-control { 
     display: none !important;
-}
-
-.gm-fullscreen-control {
-    display: none !important; /* Skryje tlačítko "Celá obrazovka" */
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
 }
