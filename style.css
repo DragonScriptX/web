@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 /* 🌸 Celkový styl stránky */
-body {
+html, body {
     font-family: 'Playfair Display', serif;
     text-align: center;
     background: linear-gradient(to bottom, #e6eaf2, #f8f4ee); /* Jemná světle modrá & béžová */
     color: #5A3E36; /* Tmavě hnědá pro text */
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Zabrání horizontálnímu posuvu */
+    position: relative;
 }
 
 /* 📜 Hlavní kontejner */
@@ -24,43 +28,49 @@ body {
 
 /* 🌿 Květinové rohy */
 .corner {
-    position: absolute;
-    width: 400px;  /* ✅ Zvětšení */
-    height: 400px; /* ✅ Zvětšení */
+    position: fixed; /* ✅ Umožní správné zarovnání */
+    width: 250px;  
+    height: 250px;
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
-    border-radius: 20px; /* ✅ Zakulacené rohy */
+    z-index: 100;
 }
 
-/* ✅ Korekce umístění rohů */
+/* ✅ Správné zarovnání rohů */
 #corner-1 {
     top: 0;
     left: 0;
     background-image: url('1.webp');
+    background-position: top left;
 }
 
 #corner-2 {
     top: 0;
     right: 0;
     background-image: url('2.webp');
+    background-position: top right;
 }
 
 #corner-3 {
     bottom: 0;
     left: 0;
     background-image: url('3.webp');
+    background-position: bottom left;
 }
 
 #corner-4 {
     bottom: 0;
     right: 0;
     background-image: url('4.webp');
+    background-position: bottom right;
 }
 
 /* ✅ Oprava odskočení květinových rohů */
 .corner {
     background-position: center;
+    margin: 0;
+    padding: 0;
 }
 
 /* 📍 Sekce místa (Mapa pod nadpisem, fotky pod mapou) */
@@ -151,7 +161,7 @@ body {
     
     /* ✅ Zmenšení rohů květin pro mobilní verzi */
     .corner {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
 }
