@@ -43,36 +43,7 @@ html, body {
     z-index: 100;
 }
 
-/* ✅ Správné zarovnání rohů */
-#corner-1 {
-    top: 0;
-    left: 0;
-    background-image: url('1.webp');
-}
 
-#corner-2 {
-    top: 0;
-    right: 0;
-    background-image: url('2.webp');
-}
-
-#corner-3 {
-    bottom: 0;
-    left: 0;
-    background-image: url('3.webp');
-}
-
-#corner-4 {
-    bottom: 0;
-    right: 0;
-    background-image: url('4.webp');
-}
-
-/* 🌿 Oprava odskočení */
-.corner {
-    margin: 0;
-    padding: 0;
-}
 
 /* ✨ Hlavní nadpis */
 .header h1 {
