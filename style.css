@@ -24,12 +24,6 @@ html, body {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
-
-    /* 🌿 Květinový motiv uvnitř okna */
-    background-image: url('1.webp'), url('2.webp'), url('3.webp'), url('4.webp');
-    background-position: top left, top right, bottom left, bottom right;
-    background-repeat: no-repeat;
-    background-size: 330px;
 }
 
 /* 🌿 Květinové rohy */
@@ -43,26 +37,17 @@ html, body {
     z-index: 100;
 }
 
-
-
-/* ✨ Hlavní nadpis */
-.header h1 {
-    font-size: 5em;
-    font-family: 'Great Vibes', cursive;
-    color: #3A5A40; /* Elegantní tmavší tón */
-    margin-bottom: 10px;
-}
-
-/* ✉️ Podnadpis */
-.header p {
-    font-size: 1.8em;
-    font-family: 'Dancing Script', cursive;
-    color: #5A3E36;
-}
+/* ✅ Opravené umístění rohů */
+#corner-1 { top: 0; left: 0; background-image: url('1.webp'); }
+#corner-2 { top: 0; right: 0; background-image: url('2.webp'); }
+#corner-3 { bottom: 0; left: 0; background-image: url('3.webp'); }
+#corner-4 { bottom: 0; right: 0; background-image: url('4.webp'); }
 
 /* 🌍 Tlačítko pro přepínání jazyků */
 .lang-switch {
-    margin-top: 10px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
     background: linear-gradient(to right, #9E7040, #7A4A2A);
     color: white;
     border: none;
@@ -72,13 +57,14 @@ html, body {
     border-radius: 15px; /* Zakulacené rohy */
     font-family: 'Dancing Script', cursive;
     transition: 0.3s;
+    z-index: 200;
 }
 
 .lang-switch:hover {
     background: linear-gradient(to right, #7A4A2A, #9E7040);
 }
 
-/* 📍 Sekce místa (Mapa pod nadpisem, fotky pod mapou) */
+/* 📍 Sekce místa */
 .location-container {
     display: flex;
     flex-direction: column;
@@ -148,28 +134,6 @@ html, body {
     border-radius: 20px;
 }
 
-/* 📱 Responsivní úpravy */
-@media screen and (max-width: 768px) {
-    .map-container {
-        width: 100%;
-        height: 250px;
-    }
-    
-    .photo-gallery {
-        justify-content: center;
-    }
-    
-    .photo-gallery img {
-        width: 100px;
-        height: 75px;
-    }
-    
-    /* ✅ Zmenšení rohů květin pro mobilní verzi */
-    .corner {
-        width: 180px;
-        height: 180px;
-    }
-}
 /* ⏳ Časovač ve stylu psaného textu */
 .countdown-container {
     font-family: 'Dancing Script', cursive;
@@ -211,4 +175,27 @@ html, body {
 .time-box small {
     font-size: 1.2em;
     color: #5A3E36;
+}
+
+/* 📱 Responsivní úpravy */
+@media screen and (max-width: 768px) {
+    .map-container {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .photo-gallery {
+        justify-content: center;
+    }
+    
+    .photo-gallery img {
+        width: 100px;
+        height: 75px;
+    }
+    
+    /* ✅ Zmenšení rohů květin pro mobilní verzi */
+    .corner {
+        width: 180px;
+        height: 180px;
+    }
 }
