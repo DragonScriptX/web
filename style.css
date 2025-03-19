@@ -45,7 +45,7 @@ html, body {
 
 /* 🌍 Tlačítko pro přepínání jazyků */
 .lang-switch {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
     background: linear-gradient(to right, #9E7040, #7A4A2A);
